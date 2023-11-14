@@ -1,0 +1,189 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Cafe24ClassicType";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Classictype/Cafe24ClassicType.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Classictype/Cafe24ClassicType.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Classictype/Cafe24ClassicType.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Classictype/Cafe24ClassicType.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/Cafe24Classictype/Cafe24ClassicType.ttf")
+      format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "GothicA1";
+  font-weight: 500;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-Medium.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-Medium.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-Medium.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-Medium.ttf")
+      format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "GothicA1";
+  font-weight: 600;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-SemiBold.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-SemiBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-SemiBold.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-SemiBold.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-SemiBold.ttf")
+      format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "GothicA1";
+  font-weight: 700;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-Bold.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-Bold.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-Bold.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/GothicA1/GothicA1-Bold.ttf")
+      format("truetype");
+  font-display: swap;
+}
+
+@mixin pre {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "GothicA1";
+  font-weight: 500;
+  color: #555555;
+}
+
+* {
+  @include pre;
+  &:before {
+    @include pre;
+  }
+  &:after {
+    @include pre;
+  }
+}
+::selection {
+  background-color: #3f76a6;
+  color: #ebe5e9;
+}
+.App {
+  display: flex;
+}
+
+/* visual */
+.visual {
+  height: 100vh;
+  width: 300px;
+  overflow: hidden;
+  img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+  }
+}
+
+/* blog */
+.blog {
+  flex: 1;
+  background-color: #ebe5e9;
+  h1 {
+    font-family: "Cafe24ClassicType";
+    color: #3f76a6;
+    margin: 30px;
+    font-size: 3rem;
+    border-bottom: 4px solid #3f76a6;
+    padding-bottom: 10px;
+  }
+  button {
+    margin-left: 30px;
+    outline: none;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    background-color: #3f76a6;
+    color: #ebe5e9;
+    transition: 0.35s;
+    cursor: pointer;
+    &:hover {
+      background-color: #ebe5e9;
+      color: #3f76a6;
+      border-color: #3f76a6;
+    }
+  }
+  .board {
+    display: flex;
+    gap: 30px;
+    padding-left: 30px;
+    .list {
+      width: 48%;
+      .title {
+        display: flex;
+        justify-content: space-between;
+        h4 {
+          font-size: 1.3rem;
+          margin: 0.8rem 0;
+          cursor: pointer;
+        }
+        span {
+          cursor: pointer;
+        }
+      }
+    }
+    .modal {
+      width: 48%;
+      background-color: #3f76a6;
+      border-radius: 30px;
+      padding: 15px;
+      text-align: center;
+      h4 {
+        font-size: 1.3rem;
+        color: #ebe5e9;
+      }
+      p {
+        color: #ebe5e9;
+        &:nth-of-type(2) {
+          text-align: left;
+        }
+      }
+    }
+  }
+  .write {
+    padding-top: 30px;
+    width: 96%;
+    margin: auto;
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      margin: 20px 0;
+      outline-color: #3f76a6;
+    }
+    textarea {
+      width: 100%;
+      height: 300px;
+      padding: 10px;
+      font-size: 1rem;
+      outline-color: #3f76a6;
+    }
+    button {
+      float: right;
+      margin-top: 10px;
+    }
+  }
+}
